@@ -1,0 +1,294 @@
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+:root {
+	
+	--blue: #3C91E6;
+	--light-blue: #CFE8FF;
+	--grey: #eee;
+	
+	--red: #DB5
+}
+
+html {
+	overflow-x: hidden;
+}
+
+
+body {
+	
+	overflow-x: hidden;
+}
+
+
+
+
+
+/* SIDEBAR */
+#sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 280px;
+	height: 100%;
+    background: url(assets/page3.png);
+	z-index: 2000;
+	font-family: monument;
+	transition: .3s ease;
+	overflow-x: hidden;
+	scrollbar-width: none;
+}
+#sidebar::--webkit-scrollbar {
+	display: none;
+}
+#sidebar.hide {
+	width: 60px;
+}
+#sidebar .brand {
+	font-size: 24px;
+	font-weight: 700;
+	height: 56px;
+	display: flex;
+	align-items: center;
+	color: white;
+	position: sticky;
+	top: 0;
+	left: 0;
+    background: rgba(0, 0, 0, 0.6);
+	z-index: 500;
+	padding-bottom: 20px;
+	box-sizing: content-box;
+}
+#sidebar .brand .bx {
+	min-width: 60px;
+	display: flex;
+	justify-content: center;
+}
+#sidebar .side-menu {
+	width: 100%;
+	margin-top: 48px;
+}
+#sidebar .side-menu li {
+	height: 48px;
+	background: transparent;
+	margin-left: 6px;
+	border-radius: 48px 0 0 48px;
+	padding: 4px;
+}
+#sidebar .side-menu li.active {
+    background: rgba(0, 0, 0, 0.6);
+	position: relative;
+}
+#sidebar .side-menu li.active::before {
+	content: '';
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	top: -40px;
+	right: 0;
+	
+	
+}
+#sidebar .side-menu li.active::after {
+	content: '';
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	bottom: -40px;
+	right: 0;
+	
+	
+}
+#sidebar .side-menu li a {
+	width: 100%;
+	height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+	display: flex;
+	align-items: center;
+	border-radius: 48px;
+	font-size: 16px;
+	color: white;
+	white-space: nowrap;
+	overflow-x: hidden;
+}
+#sidebar .side-menu.top li.active a {
+	color: var(--blue);
+}
+#sidebar.hide .side-menu li a {
+	width: calc(48px - (4px * 2));
+	transition: width .3s ease;
+}
+#sidebar .side-menu li a.logout {
+	color: var(--red);
+}
+#sidebar .side-menu.top li a:hover {
+	color: var(--blue);
+}
+#sidebar .side-menu li a .bx {
+	min-width: calc(60px  - ((4px + 6px) * 2));
+	display: flex;
+	justify-content: center;
+}
+/* SIDEBAR */
+
+
+
+
+
+/* CONTENT */
+#content-top {
+	position: relative;
+	width: calc(100% - 280px);
+	left: 280px;
+	transition: .3s ease;
+}
+
+
+
+
+
+/* NAVBAR */
+#content-top nav {
+	
+	
+	padding: 0 40px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	
+	position: sticky;
+	position: absolute;
+	z-index: 1000;
+}
+
+#content-top nav i{
+    color:white;
+    font-size: 40px;
+	position: absolute;
+	
+	top: 5vh;
+	
+}
+#content-top nav a{
+	top: 5vh;
+	left: 60vw;
+	position: relative;
+    color:white;
+    font-size: 20px;
+	font-family: monument;
+	
+	
+}
+   
+
+
+#img{
+   
+    z-index:-1;
+
+}
+
+#img {
+	height: 100vh;
+    
+	position: relative;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+#img img {
+    width: calc(100vw - 280px); /* Consider sidebar width */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+/* When sidebar is hidden */
+#img.expanded {
+    left: -220px; /* Move the image leftward */
+	
+}
+
+#img.expanded img {
+    width: 100vw; /* Expand fully */
+	height: 100vh;
+}
+
+#content h1{
+    position: absolute;
+    bottom: 51vh;
+    left: 20vw;
+    font-size: 6vh;
+    color: white;
+    
+    
+}
+#content p{
+    font-size: 4vh;
+    position: absolute;
+    bottom: 44vh;
+    left: 30vw;
+    color: white;
+    
+    
+    
+}
+
+#btn>p{
+    font-size: 30px;
+    position: absolute;
+    bottom: 0.11vh;
+    left: 6vw;
+    width: 40vw;
+   
+    
+}
+#btn{
+  
+    height: 5vh;
+    width: 25vw;
+    font-size: 30px;
+    position: relative;
+    bottom: 40vh;
+    left: 34vw;
+    color: white;
+    border-radius: 20px;
+   cursor: pointer;
+    border:2px solid whitesmoke;
+    box-shadow: 0 0 15px #244ab3, 0 0 30px #1541bb, 0 0 45px #0d39b1;;
+    background:transparent; 
+   
+}
+
+
+#cursor {
+    height: 20px;
+    width: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+    transition: all linear 0.1s;
+  }
+  #cursor-blur {
+    height: 500px;
+    width: 500px;
+    background-color: rgba(13, 159, 226, 0.177);
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(80px);
+    z-index: 9;
+    transition: all linear 0.4s;
+  }
